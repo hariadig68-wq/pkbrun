@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PKB RUN FEST 5K</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,20 +18,9 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#eef5ee;
+background:#f5f7f5;
 overflow-x:hidden;
 color:#222;
-}
-
-/* SCROLL */
-
-::-webkit-scrollbar{
-width:8px;
-}
-
-::-webkit-scrollbar-thumb{
-background:#5cff38;
-border-radius:20px;
 }
 
 /* HEADER */
@@ -41,63 +30,42 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:15px 7%;
+padding:16px 7%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,70,20,.92);
+background:rgba(0,60,15,.92);
 backdrop-filter:blur(12px);
-z-index:1000;
+z-index:999;
 box-shadow:0 5px 20px rgba(0,0,0,.2);
-animation:topdown 1s ease;
-}
-
-@keyframes topdown{
-from{
-transform:translateY(-100%);
-}
-to{
-transform:translateY(0);
-}
 }
 
 .logo{
-font-size:28px;
-font-weight:800;
+font-size:30px;
+font-weight:900;
 color:#fff;
+letter-spacing:1px;
 }
 
 .logo span{
-color:#7dff4b;
+color:#73ff4b;
+}
+
+nav{
+display:flex;
+gap:20px;
 }
 
 nav a{
 text-decoration:none;
 color:#fff;
-margin-left:25px;
-font-size:15px;
+font-size:14px;
 font-weight:500;
 transition:.3s;
-position:relative;
-}
-
-nav a::after{
-content:'';
-position:absolute;
-left:0;
-bottom:-5px;
-width:0%;
-height:2px;
-background:#7dff4b;
-transition:.3s;
-}
-
-nav a:hover::after{
-width:100%;
 }
 
 nav a:hover{
-color:#7dff4b;
+color:#73ff4b;
 }
 
 /* HERO */
@@ -105,15 +73,16 @@ color:#7dff4b;
 .hero{
 height:100vh;
 display:flex;
-justify-content:center;
 align-items:center;
-text-align:center;
-padding:20px;
+justify-content:center;
+padding:120px 7% 80px;
 position:relative;
 overflow:hidden;
+
 background:
-linear-gradient(rgba(0,50,10,.78),rgba(0,50,10,.82)),
-url('https://images.unsplash.com/photo-1483721310020-03333e577078?q=80&w=1400&auto=format&fit=crop');
+linear-gradient(rgba(0,40,0,.72),rgba(0,40,0,.82)),
+url('https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1600&auto=format&fit=crop');
+
 background-size:cover;
 background-position:center;
 }
@@ -125,9 +94,9 @@ width:700px;
 height:700px;
 background:rgba(255,255,255,.04);
 border-radius:50%;
-top:-250px;
-right:-250px;
-animation:rotate 20s linear infinite;
+top:-300px;
+right:-200px;
+animation:spin 20s linear infinite;
 }
 
 .hero::after{
@@ -135,36 +104,37 @@ content:'';
 position:absolute;
 width:500px;
 height:500px;
-background:rgba(255,255,255,.04);
+background:rgba(255,255,255,.05);
 border-radius:50%;
-bottom:-200px;
-left:-200px;
-animation:rotate2 18s linear infinite;
+bottom:-250px;
+left:-150px;
+animation:spin2 15s linear infinite;
 }
 
-@keyframes rotate{
+@keyframes spin{
 100%{
 transform:rotate(360deg);
 }
 }
 
-@keyframes rotate2{
+@keyframes spin2{
 100%{
 transform:rotate(-360deg);
 }
 }
 
 .hero-content{
-max-width:950px;
 position:relative;
 z-index:2;
-animation:fadeup 1.5s ease;
+max-width:900px;
+text-align:center;
+animation:fadeUp 1.2s ease;
 }
 
-@keyframes fadeup{
+@keyframes fadeUp{
 from{
 opacity:0;
-transform:translateY(80px);
+transform:translateY(60px);
 }
 to{
 opacity:1;
@@ -172,63 +142,94 @@ transform:translateY(0);
 }
 }
 
+.badge{
+display:inline-block;
+padding:10px 20px;
+background:#73ff4b;
+color:#000;
+font-weight:700;
+border-radius:50px;
+margin-bottom:25px;
+box-shadow:0 10px 30px rgba(115,255,75,.35);
+}
+
 .hero h1{
 font-size:78px;
-line-height:1.1;
-font-weight:800;
+line-height:1.05;
 color:#fff;
+font-weight:900;
 margin-bottom:20px;
 }
 
 .hero h1 span{
-color:#7dff4b;
+color:#73ff4b;
 }
 
 .hero p{
 font-size:20px;
+color:#f1f1f1;
 line-height:1.9;
-color:#eee;
-margin-bottom:35px;
+margin-bottom:40px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-padding:18px 50px;
-background:#7dff4b;
-color:#000;
-text-decoration:none;
-font-size:18px;
-font-weight:700;
+padding:18px 40px;
 border-radius:60px;
+text-decoration:none;
+font-weight:700;
 transition:.4s;
-box-shadow:0 10px 30px rgba(125,255,75,.4);
+font-size:16px;
+display:inline-block;
 }
 
-.btn:hover{
-transform:translateY(-6px) scale(1.05);
+.btn-main{
+background:#73ff4b;
+color:#000;
+box-shadow:0 10px 25px rgba(115,255,75,.4);
+}
+
+.btn-main:hover{
+transform:translateY(-5px) scale(1.05);
 background:#fff;
+}
+
+.btn-second{
+border:2px solid #fff;
+color:#fff;
+}
+
+.btn-second:hover{
+background:#fff;
+color:#000;
 }
 
 /* SECTION */
 
 .section{
-padding:110px 7%;
+padding:100px 7%;
 }
 
 .title{
 text-align:center;
 font-size:48px;
-font-weight:800;
-color:#005915;
-margin-bottom:15px;
+font-weight:900;
+color:#005c13;
+margin-bottom:18px;
 }
 
 .subtitle{
-text-align:center;
-max-width:900px;
+max-width:850px;
 margin:auto;
-line-height:1.9;
+text-align:center;
 font-size:18px;
+line-height:1.9;
 color:#666;
 margin-bottom:60px;
 }
@@ -244,9 +245,9 @@ gap:30px;
 .info-card{
 background:#fff;
 padding:35px;
-border-radius:28px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-transition:.5s;
+border-radius:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.4s;
 position:relative;
 overflow:hidden;
 }
@@ -254,27 +255,43 @@ overflow:hidden;
 .info-card::before{
 content:'';
 position:absolute;
-width:180px;
-height:180px;
-background:rgba(125,255,75,.08);
+width:170px;
+height:170px;
+background:rgba(115,255,75,.12);
 border-radius:50%;
 top:-60px;
 right:-60px;
 }
 
 .info-card:hover{
-transform:translateY(-12px);
+transform:translateY(-10px);
 }
 
 .info-card h3{
 font-size:30px;
 margin-bottom:15px;
-color:#005915;
+color:#005c13;
+}
+
+.price{
+font-size:48px;
+font-weight:900;
+margin-bottom:15px;
 }
 
 .info-card p{
-line-height:1.9;
 color:#666;
+line-height:1.8;
+}
+
+.info-card ul{
+list-style:none;
+margin-top:20px;
+}
+
+.info-card ul li{
+margin:10px 0;
+color:#444;
 }
 
 /* GALLERY */
@@ -287,116 +304,123 @@ gap:25px;
 
 .gallery img{
 width:100%;
-height:340px;
+height:320px;
 object-fit:cover;
-border-radius:25px;
+border-radius:28px;
 transition:.5s;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
+box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
 .gallery img:hover{
-transform:scale(1.05);
+transform:scale(1.04);
 }
 
 /* DOORPRIZE */
 
-.prize-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.prize-card{
-background:#fff;
-border-radius:28px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-transition:.5s;
+.door-section{
+background:#003b0c;
 position:relative;
+overflow:hidden;
 }
 
-.prize-card:hover{
-transform:translateY(-12px) scale(1.02);
+.door-section::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(255,255,255,.04);
+border-radius:50%;
+top:-200px;
+right:-200px;
 }
 
-.prize-card img{
+.door-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:60px;
+}
+
+.door-card{
+background:#fff;
+border-radius:30px;
+overflow:hidden;
+transition:.4s;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.door-card:hover{
+transform:translateY(-12px);
+}
+
+.door-card img{
 width:100%;
-height:380px;
+height:300px;
 object-fit:cover;
 }
 
-.prize-content{
-padding:22px;
+.door-content{
+padding:25px;
 }
 
-.prize-content h4{
-font-size:26px;
+.door-content h3{
+font-size:28px;
 margin-bottom:10px;
-color:#005915;
+color:#005c13;
+font-weight:800;
 }
 
-.prize-content p{
-line-height:1.8;
+.door-content p{
 color:#666;
+line-height:1.7;
 }
 
-/* COUNTDOWN */
+/* TIMELINE */
 
-.countdown{
-background:
-linear-gradient(rgba(0,70,10,.92),rgba(0,70,10,.92)),
-url('https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1400&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
-padding:100px 7%;
+.timeline{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.timeline-box{
+background:#fff;
+padding:35px;
+border-radius:28px;
 text-align:center;
-color:#fff;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.4s;
 }
 
-.countdown h2{
-font-size:55px;
-margin-bottom:40px;
+.timeline-box:hover{
+transform:translateY(-8px);
 }
 
-.timer{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:20px;
-}
-
-.time-box{
-background:rgba(255,255,255,.1);
-padding:30px;
-border-radius:25px;
-min-width:140px;
-backdrop-filter:blur(10px);
-}
-
-.time-box h3{
-font-size:50px;
-color:#7dff4b;
-}
-
-.time-box span{
-font-size:16px;
+.timeline-box h4{
+font-size:26px;
+color:#005c13;
+margin-bottom:10px;
 }
 
 /* CTA */
 
 .cta{
-padding:120px 7%;
+padding:100px 7%;
 text-align:center;
+
 background:
-linear-gradient(rgba(0,50,10,.9),rgba(0,50,10,.9)),
-url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1400&auto=format&fit=crop');
+linear-gradient(rgba(0,50,10,.88),rgba(0,50,10,.88)),
+url('https://images.unsplash.com/photo-1483721310020-03333e577078?q=80&w=1600&auto=format&fit=crop');
+
 background-size:cover;
 background-position:center;
 color:#fff;
 }
 
 .cta h2{
-font-size:60px;
+font-size:56px;
+font-weight:900;
 margin-bottom:20px;
 }
 
@@ -411,31 +435,30 @@ margin-bottom:35px;
 /* FOOTER */
 
 footer{
-background:#001b07;
-padding:35px;
+background:#001c08;
+padding:30px;
 text-align:center;
 color:#ccc;
-font-size:14px;
 }
 
-/* WA */
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
-bottom:25px;
-right:25px;
-width:68px;
-height:68px;
+right:20px;
+bottom:20px;
+width:70px;
+height:70px;
 background:#25d366;
 border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:34px;
+font-size:32px;
 text-decoration:none;
 color:#fff;
-z-index:999;
 box-shadow:0 10px 25px rgba(0,0,0,.3);
+z-index:999;
 animation:pulse 2s infinite;
 }
 
@@ -444,7 +467,7 @@ animation:pulse 2s infinite;
 transform:scale(1);
 }
 50%{
-transform:scale(1.1);
+transform:scale(1.08);
 }
 100%{
 transform:scale(1);
@@ -459,12 +482,8 @@ nav{
 display:none;
 }
 
-.logo{
-font-size:22px;
-}
-
 .hero h1{
-font-size:42px;
+font-size:46px;
 }
 
 .hero p{
@@ -479,24 +498,18 @@ font-size:34px;
 font-size:38px;
 }
 
-.countdown h2{
-font-size:36px;
+.gallery img{
+height:250px;
 }
 
-.time-box{
-min-width:120px;
-padding:20px;
-}
-
-.time-box h3{
-font-size:36px;
+.door-card img{
+height:250px;
 }
 
 }
 
 </style>
 </head>
-
 <body>
 
 <header>
@@ -507,9 +520,10 @@ PKB <span>RUNFEST</span>
 
 <nav>
 <a href="#tentang">Tentang</a>
-<a href="#galeri">Galeri</a>
+<a href="#kategori">Kategori</a>
 <a href="#doorprize">Doorprize</a>
-<a href="#countdown">Countdown</a>
+<a href="#galeri">Galeri</a>
+<a href="#jadwal">Jadwal</a>
 <a href="#daftar">Daftar</a>
 </nav>
 
@@ -521,15 +535,31 @@ PKB <span>RUNFEST</span>
 
 <div class="hero-content">
 
-<h1>PKB RUN FEST <span>5K</span></h1>
+<div class="badge">
+🔥 EVENT FUN RUN TERBESAR 2026
+</div>
+
+<h1>
+PKB <span>RUN FEST</span> 5K
+</h1>
 
 <p>
 Run, Fun, and Festive!  
-Event fun run terbesar dengan ribuan peserta, race modern,
-doorprize spektakuler, dan pengalaman lari yang tidak terlupakan.
+Event lari modern dengan konsep sehat, hiburan seru,
+doorprize mewah, dan pengalaman event premium.
 </p>
 
-<a href="#daftar" class="btn">DAFTAR SEKARANG</a>
+<div class="hero-buttons">
+
+<a href="#daftar" class="btn btn-main">
+DAFTAR SEKARANG
+</a>
+
+<a href="#doorprize" class="btn btn-second">
+LIHAT DOORPRIZE
+</a>
+
+</div>
 
 </div>
 
@@ -539,36 +569,89 @@ doorprize spektakuler, dan pengalaman lari yang tidak terlupakan.
 
 <section class="section" id="tentang">
 
-<h2 class="title">Tentang Event</h2>
+<h2 class="title">
+Tentang PKB Run Fest
+</h2>
 
 <p class="subtitle">
-PKB Run Fest adalah event olahraga modern dengan konsep sehat,
-bahagia, dan penuh semangat kebersamaan.
-Diselenggarakan secara profesional dengan hiburan, race experience,
-dan hadiah spektakuler untuk seluruh peserta.
+PKB Run Fest merupakan event fun run modern yang menghadirkan pengalaman olahraga sehat,
+seru, penuh hiburan, dan hadiah menarik.
+Acara ini terbuka untuk umum dengan konsep premium dan festival yang instagramable.
 </p>
+
+</section>
+
+<!-- KATEGORI -->
+
+<section class="section" id="kategori">
+
+<h2 class="title">
+Kategori Event
+</h2>
 
 <div class="info-grid">
 
 <div class="info-card">
+
 <h3>5K RUN</h3>
+
+<div class="price">
+150K
+</div>
+
 <p>
-Kategori lari santai untuk seluruh peserta dengan rute menarik dan suasana meriah.
+Kategori fun run untuk semua peserta dan pemula.
 </p>
+
+<ul>
+<li>✔ Jersey Premium</li>
+<li>✔ BIB Number</li>
+<li>✔ Medali Finisher</li>
+<li>✔ Doorprize</li>
+</ul>
+
 </div>
 
 <div class="info-card">
+
 <h3>10K RUN</h3>
+
+<div class="price">
+175K
+</div>
+
 <p>
-Challenge lebih seru untuk peserta yang ingin pengalaman race lebih maksimal.
+Tantangan lebih jauh dengan benefit eksklusif.
 </p>
+
+<ul>
+<li>✔ Jersey Exclusive</li>
+<li>✔ Goodie Bag</li>
+<li>✔ Medali Premium</li>
+<li>✔ Refreshment</li>
+</ul>
+
 </div>
 
 <div class="info-card">
-<h3>MEGA EVENT</h3>
+
+<h3>BENEFIT</h3>
+
+<div class="price">
+FULL
+</div>
+
 <p>
-Doorprize mewah, hiburan musik, festival UMKM, dan ribuan peserta.
+Event festival modern dengan hiburan lengkap.
 </p>
+
+<ul>
+<li>✔ Live Music</li>
+<li>✔ Booth Festival</li>
+<li>✔ Dokumentasi</li>
+<li>✔ MC & Games</li>
+</ul>
+
 </div>
 
 </div>
@@ -579,17 +662,19 @@ Doorprize mewah, hiburan musik, festival UMKM, dan ribuan peserta.
 
 <section class="section" id="galeri">
 
-<h2 class="title">Galeri PKB Run Fest</h2>
+<h2 class="title">
+Galeri Event
+</h2>
 
 <p class="subtitle">
-Momen terbaik peserta PKB Run Fest dengan semangat kebersamaan dan energi positif.
+Keseruan peserta PKB Run Fest dengan konsep event modern dan penuh semangat.
 </p>
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?q=80&w=1200&auto=format&fit=crop">
 
-<img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop">
 
 <img src="https://images.unsplash.com/photo-1486218119243-13883505764c?q=80&w=1200&auto=format&fit=crop">
 
@@ -599,76 +684,112 @@ Momen terbaik peserta PKB Run Fest dengan semangat kebersamaan dan energi positi
 
 <!-- DOORPRIZE -->
 
-<section class="section" id="doorprize">
+<section class="section door-section" id="doorprize">
 
-<h2 class="title">Doorprize Spektakuler</h2>
+<h2 class="title" style="color:white;">
+🎁 Doorprize Mewah
+</h2>
 
-<p class="subtitle">
-Hadiah mewah dan menarik untuk seluruh peserta PKB Run Fest.
+<p class="subtitle" style="color:#ddd;">
+Peserta berkesempatan memenangkan berbagai hadiah menarik dan grand prize spektakuler.
 </p>
 
-<div class="prize-grid">
+<div class="door-grid">
 
-<div class="prize-card">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop">
-<div class="prize-content">
-<h4>Sport Apparel</h4>
+<div class="door-card">
+
+<img src="https://images.unsplash.com/photo-1585386959984-a41552231658?q=80&w=1200&auto=format&fit=crop">
+
+<div class="door-content">
+
+<h3>Motor Listrik</h3>
+
 <p>
-Hadiah apparel olahraga premium untuk peserta terpilih.
+Grand prize utama untuk peserta beruntung PKB Run Fest.
 </p>
-</div>
+
 </div>
 
-<div class="prize-card">
-<img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200&auto=format&fit=crop">
-<div class="prize-content">
-<h4>Motor Listrik</h4>
-<p>
-Doorprize utama motor listrik modern dan ramah lingkungan.
-</p>
-</div>
 </div>
 
-<div class="prize-card">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
-<div class="prize-content">
-<h4>Grand Prize</h4>
+<div class="door-card">
+
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop">
+
+<div class="door-content">
+
+<h3>Electronic</h3>
+
 <p>
-Hadiah spesial dan kejutan menarik untuk peserta PKB Run Fest.
+Hadiah elektronik premium untuk peserta event.
 </p>
+
 </div>
+
+</div>
+
+<div class="door-card">
+
+<img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop">
+
+<div class="door-content">
+
+<h3>Sepeda Gunung</h3>
+
+<p>
+Hadiah sepeda keren dengan kualitas premium.
+</p>
+
+</div>
+
 </div>
 
 </div>
 
 </section>
 
-<!-- COUNTDOWN -->
+<!-- JADWAL -->
 
-<section class="countdown" id="countdown">
+<section class="section" id="jadwal">
 
-<h2>Menuju Race Day</h2>
+<h2 class="title">
+Pelaksanaan Event
+</h2>
 
-<div class="timer">
+<p class="subtitle">
+Informasi lengkap pelaksanaan PKB Run Fest 2026.
+</p>
 
-<div class="time-box">
-<h3 id="days">00</h3>
-<span>Hari</span>
+<div class="timeline">
+
+<div class="timeline-box">
+
+<h4>📅 Tanggal</h4>
+
+<p>
+25 - 26 Juli 2026
+</p>
+
 </div>
 
-<div class="time-box">
-<h3 id="hours">00</h3>
-<span>Jam</span>
+<div class="timeline-box">
+
+<h4>📍 Lokasi</h4>
+
+<p>
+Plaza Barat GBK Senayan Jakarta
+</p>
+
 </div>
 
-<div class="time-box">
-<h3 id="minutes">00</h3>
-<span>Menit</span>
-</div>
+<div class="timeline-box">
 
-<div class="time-box">
-<h3 id="seconds">00</h3>
-<span>Detik</span>
+<h4>⏰ Start</h4>
+
+<p>
+Pukul 05.30 WIB
+</p>
+
 </div>
 
 </div>
@@ -679,52 +800,34 @@ Hadiah spesial dan kejutan menarik untuk peserta PKB Run Fest.
 
 <section class="cta" id="daftar">
 
-<h2>Siap Menjadi Bagian PKB Run Fest?</h2>
+<h2>
+Siap Jadi Bagian PKB Run Fest?
+</h2>
 
 <p>
-Daftarkan diri kamu sekarang juga dan rasakan pengalaman event lari modern
-dengan ribuan peserta serta hadiah spektakuler.
+Daftarkan diri sekarang dan rasakan pengalaman event fun run terbaik tahun ini.
+Kuota terbatas dan hadiah spektakuler menanti kamu.
 </p>
 
-<a href="#" class="btn">REGISTER NOW</a>
+<a href="https://wa.me/6282298515739?text=Halo%20Admin%20PKB%20Run%20Fest%2C%20saya%20ingin%20daftar."
+class="btn btn-main">
+REGISTER NOW
+</a>
 
 </section>
 
+<!-- FOOTER -->
+
 <footer>
-© 2026 PKB RUN FEST • RUN FUN AND FESTIVE
+© 2026 PKB RUN FEST • Premium Landing Page
 </footer>
 
-<a href="https://wa.me/6282298515739" class="whatsapp">
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/6282298515739?text=Halo%20Admin%20PKB%20Run%20Fest"
+class="whatsapp">
 ✆
 </a>
-
-<script>
-
-const targetDate = new Date("July 26, 2026 05:30:00").getTime();
-
-const timer = setInterval(function(){
-
-const now = new Date().getTime();
-
-const distance = targetDate - now;
-
-const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-document.getElementById("days").innerHTML = days;
-document.getElementById("hours").innerHTML = hours;
-document.getElementById("minutes").innerHTML = minutes;
-document.getElementById("seconds").innerHTML = seconds;
-
-if(distance < 0){
-clearInterval(timer);
-}
-
-},1000);
-
-</script>
 
 </body>
 </html>
